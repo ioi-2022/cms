@@ -30,6 +30,7 @@ import logging
 from cms import ServiceCoord, config
 from cms.db import SessionGen, Submission, Dataset, get_submission_results
 from cms.io import Executor, TriggeredService, rpc_method
+from cmscommon import datetime
 from cmscommon.datetime import make_datetime
 from .scoringoperations import ScoringOperation, get_operations
 
@@ -99,6 +100,9 @@ class ScoringExecutor(Executor):
                 submission_result.public_score_details, \
                 submission_result.ranking_score_details = \
                 score_type.compute_score(submission_result)
+
+            if submission_result.scored_at is None:
+                submission_result.scored_at = datetime.make_datetime()
 
             # Store it.
             session.commit()
