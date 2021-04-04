@@ -30,7 +30,7 @@ dataset (Dataset|None): the dataset to show results for, or if not defined use
       <th>User</th>
       <th>Task</th>
       <th>Status</th>
-      <th>First Scored At</th>
+      <th>Latency</th>
       <th>Files</th>
       <th>Token</th>
       <th>Official</th>
@@ -146,8 +146,10 @@ dataset (Dataset|None): the dataset to show results for, or if not defined use
 
     {% endif %}
   </td>
-  <td>
-    {{ sr.scored_at }}
+  <td id="latency"">
+    {% if sr is not none %}
+      {{ (sr.scored_at - s.timestamp).total_seconds()|round|int }} s
+    {% endif %}
   </td>
   <td>
     {% for filename, sub_file in s.files|dictsort(by="key") %}

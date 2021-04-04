@@ -124,12 +124,6 @@
           {% endif %}
         </td>
       </tr>
-      <tr>
-        <td>First Scored At</td>
-        <td id="submission_first_scored_at">
-            {{ sr.scored_at }}
-        </td>
-      </tr>
       {% if status == SubmissionResult.SCORED and st is defined %}
       <tr>
         <td>Score as seen by user</td>
@@ -143,6 +137,12 @@
       </tr>
       {% endif %}
       {% if sr is not none %}
+      <tr>
+        <td>Latency as seen by user</td>
+        <td>
+          {{ (sr.scored_at - s.timestamp).total_seconds()|round|int }} s
+        </td>
+      </tr>
       <tr>
         <td>Failures during compilation</td>
         <td>{{ sr.compilation_tries }}</td>
