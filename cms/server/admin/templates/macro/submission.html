@@ -147,7 +147,7 @@ dataset (Dataset|None): the dataset to show results for, or if not defined use
     {% endif %}
   </td>
   <td id="latency"">
-    {% if sr is not none %}
+    {% if sr is not none and sr.scored_at is not none %}
       {{ (sr.scored_at - s.timestamp).total_seconds()|round|int }} s
     {% endif %}
   </td>

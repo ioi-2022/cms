@@ -136,7 +136,7 @@
         </td>
       </tr>
       {% endif %}
-      {% if sr is not none %}
+      {% if sr is not none and sr.scored_at is not none %}
       <tr>
         <td>Latency as seen by user</td>
         <td>
