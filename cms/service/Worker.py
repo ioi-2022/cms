@@ -157,7 +157,7 @@ class Worker(Service):
 
             if not isinstance(job, EvaluationJob):
                 return
-            if job.plus is None:
+            if job.plus is None or 'execution_time' not in job.plus:
                 return
 
             execution_time = job.plus['execution_time']
