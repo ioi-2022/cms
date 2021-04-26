@@ -926,6 +926,8 @@ abbr {
 
 #UserDetail_f_name {
     top: 0;
+    max-width: 250px;
+    text-align: right;
 }
 
 #UserDetail_l_name {

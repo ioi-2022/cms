@@ -40,8 +40,7 @@
       <tr>
         <th></th>
         <th>Username</th>
-        <th>First name</th>
-        <th>Last name</th>
+        <th>Name</th>
       </tr>
     </thead>
     <tbody>
@@ -52,7 +51,6 @@
         </td>
         <td><a href="{{ url("contest", contest.id, "user", u.id, "edit") }}">{{ u.username }}</a></td>
         <td>{{ u.first_name }}</td>
-        <td>{{ u.last_name }}</td>
       </tr>
       {% endfor %}
     </tbody>

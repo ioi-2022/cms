@@ -21,8 +21,7 @@
       <tr>
         <th></th>
         <th>Username</th>
-        <th>First name</th>
-        <th>Last name</th>
+        <th>Name</th>
       </tr>
     </thead>
     <tbody>
@@ -33,7 +32,6 @@
         </td>
         <td><a href="{{ url("user", u.id) }}">{{ u.username }}</a></td>
         <td>{{ u.first_name }}</td>
-        <td>{{ u.last_name }}</td>
       </tr>
       {% endfor %}
     </tbody>

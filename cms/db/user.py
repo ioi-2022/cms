@@ -56,7 +56,8 @@ class User(Base):
         nullable=False)
     last_name = Column(
         Unicode,
-        nullable=False)
+        nullable=False,
+        default="")
 
     # Username and password to log in the CWS.
     username = Column(

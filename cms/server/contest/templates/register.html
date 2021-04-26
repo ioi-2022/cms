@@ -61,15 +61,9 @@ $(document).ready(function() {
                 {% endif %}
                 <fieldset>
                     <div class="control-group">
-                        <label class="control-label" for="first_name">{% trans %}First name{% endtrans %}</label>
+                        <label class="control-label" for="first_name">{% trans %}Name{% endtrans %}</label>
                         <div class="controls">
                             <input required minlength="1" maxlength="{{ MAX_INPUT_LENGTH }}" type="text" class="input-xlarge" name="first_name" id="first_name">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="last_name">{% trans %}Last name{% endtrans %}</label>
-                        <div class="controls">
-                            <input required minlength="1" maxlength="{{ MAX_INPUT_LENGTH }}" type="text" class="input-xlarge" name="last_name" id="last_name">
                         </div>
                     </div>
                     <div class="control-group">

@@ -86,7 +86,7 @@ class RegistrationHandler(ContestHandler):
 
         try:
             first_name = self.get_argument("first_name")
-            last_name = self.get_argument("last_name")
+            last_name = ""
             username = self.get_argument("username")
             password = self.get_argument("password")
             email = self.get_argument("email")
@@ -94,8 +94,6 @@ class RegistrationHandler(ContestHandler):
                 email = None
 
             if not 1 <= len(first_name) <= self.MAX_INPUT_LENGTH:
-                raise ValueError()
-            if not 1 <= len(last_name) <= self.MAX_INPUT_LENGTH:
                 raise ValueError()
             if not 1 <= len(username) <= self.MAX_INPUT_LENGTH:
                 raise ValueError()
